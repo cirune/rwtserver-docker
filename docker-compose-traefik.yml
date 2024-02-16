@@ -1,0 +1,32 @@
+version: '3.9'
+
+################################ Networks
+networks:
+  public:
+    external: true
+  local-network:
+    external: true
+
+
+################################ Services
+services:
+  rwtserver:
+    image: cirune/rwtserver:0.2
+    container_name: rwtogether
+    volumes:
+      - ./data:/RWTServer
+    restart: always
+    stdin_open: true
+    tty: true
+    networks:
+      public:
+      local-network:
+    labels:
+# Treafik Labels
+      - traefik.enable=true
+      - traefik.tcp.routers.rwtserver.entrypoints=rwtserver
+      - traefik.tcp.routers.rwtserver.rule=HostSNI(`*`)
+      - traefik.tcp.routers.rwtserver.tls=false
+      - traefik.tcp.routers.rwtserver.tls.passthrough=true
+      - traefik.tcp.services.rwtserver.loadbalancer.server.port=25555
+      - traefik.docker.network=public
