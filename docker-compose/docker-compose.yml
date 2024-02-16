@@ -1,9 +1,7 @@
 version: '3.9'
-################################ Services
 services:
   rwtserver:
-    #image: cirune/rwtserver:0.1
-    build: ./
+    image: cirune/rwtserver
     container_name: rimworld-server
     ports:
       - "25555:25555"
@@ -12,7 +10,6 @@ services:
     restart: always
     networks:
       rimworld_frontend:
-    labels:
 networks:
   rimworld_frontend:
     driver: bridge
