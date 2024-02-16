@@ -10,19 +10,9 @@ services:
     volumes:
       - ./data:/RWTServer
     restart: always
-    stdin_open: true
-    tty: true
     networks:
       rimworld_frontend:
     labels:
-# Treafik Labels
-      - traefik.enable=true
-      - traefik.tcp.routers.rwtserver.entrypoints=rwtserver
-      - traefik.tcp.routers.rwtserver.rule=HostSNI(`*`)
-      - traefik.tcp.routers.rwtserver.tls=false
-      - traefik.tcp.routers.rwtserver.tls.passthrough=true
-      - traefik.tcp.services.rwtserver.loadbalancer.server.port=25555
-      - traefik.docker.network=public
 networks:
   rimworld_frontend:
     driver: bridge
