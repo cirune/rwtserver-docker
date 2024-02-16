@@ -3,7 +3,7 @@ version: '3.9'
 services:
   rwtserver:
     #image: cirune/rwtserver:0.1
-    build: .
+    build: ./
     container_name: rimworld-server
     ports:
       - "25555:25555"
