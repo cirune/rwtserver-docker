@@ -1,5 +1,5 @@
 version: '3.9'
-################################ Services
+
 services:
   rwtserver:
     image: cirune/rwtserver:latest
@@ -14,7 +14,6 @@ services:
     networks:
       rimworld_frontend:
 
-################################# Networks
 networks:
   rimworld_frontend:
     driver: bridge
