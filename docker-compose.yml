@@ -1,0 +1,22 @@
+version: '3.9'
+################################ Services
+services:
+  rwtserver:
+    image: cirune/rwtserver:latest
+    container_name: rwtserver
+    ports:
+      - "25555:25555"
+    volumes:
+      - ./data:/RWTServer
+    restart: always
+    stdin_open: true
+    tty: true
+    networks:
+      rimworld_frontend:
+
+################################# Networks
+networks:
+  rimworld_frontend:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
