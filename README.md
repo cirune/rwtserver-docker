@@ -22,6 +22,7 @@ Auto set-up, uses the latest version, update script.
 
 ## Usage
 Start the server with : docker compose up -d
+
 Terminal access to the server : docker attach rwtserver
 
 All server files are stored into the ./data folder where the compose file was started.
