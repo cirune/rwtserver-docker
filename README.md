@@ -3,21 +3,28 @@ Very much WiP Rimworld Together Server Docker suite
 
 ## Description
 Dockerised instance of the Nova-Atomic's Rimworld Together mod server.
-Auto set-up, uses the latest version and update script.
+Auto set-up, uses the latest version, update script.
 
 ## Installation
+- Install Docker and Docker-Compose on your server.
+- Start the container
+- Add mods to your liking.
 
-WiP
 ### Docker run
 
 ### Docker compose
+- Download the docker-compose file from this repository into your Rimworld Together work directory.
+- Start it with : docker compose up -d
+#### No Reverse Proxy
 
-## with Treafik
-- The docker-compose file in the repo is designed around a Traefik reverse-proxy Self-Host solution to allow domain resolution and expandability without having to open new ports.
-    
+#### with Treafik
+
 
 ## Usage
+Start the server with : docker compose up -d
 Terminal access to the server : docker attach rwtserver
+
+All server files are stored into the ./data folder where the compose file was started.
 
 
 ## Roadmap

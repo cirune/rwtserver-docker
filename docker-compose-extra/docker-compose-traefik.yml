@@ -11,7 +11,7 @@ networks:
 ################################ Services
 services:
   rwtserver:
-    image: cirune/rwtserver:0.2
+    image: cirune/rwtserver:latest
     container_name: rwtogether
     volumes:
       - ./data:/RWTServer
